@@ -1,6 +1,6 @@
-# Vagrant PHP7 
+# Magento Vagrant PHP7 
 
-A simple Vagrant LAMP setup running PHP7.
+A simple Vagrant LAMP setup running Magento on PHP7.
 
 ## What's inside?
 
