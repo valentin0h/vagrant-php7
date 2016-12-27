@@ -8,13 +8,11 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     config.vm.box = "ubuntu/trusty64"
 
     # Mount shared folder using NFS
-    config.vm.synced_folder ".", "/vagrant",
-        id: "core",
-        :nfs => true,
-        :mount_options => ['nolock,vers=3,udp,noatime']
+    config.vm.synced_folder ".", "/vagrant", id: "core", :nfs => true, :mount_options => ['nolock,vers=3,udp,noatime']
+    config.vm.synced_folder "../magento", "/var/www/magento", owner: "www-data", group: "root"
 
     # Do some network configuration
-    config.vm.network "private_network", ip: "192.168.100.100"
+    config.vm.network "private_network", ip: "192.168.33.10"
 
     # Assign a quarter of host memory and all available CPU's to VM
     # Depending on host OS this has to be done differently.
